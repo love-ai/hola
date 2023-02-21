@@ -22,13 +22,13 @@ curl_setopt_array($curl, array(
       }
    ],
    "subject":"Hello world",
-   "htmlContent":"<html><head></head><body><p>Hello,</p>This is my first transactional email sent from Sendinblue.</p></body></html>"
+   "htmlContent":"<html><input type=\\"text\\" placeholder=\\"Email address or phone number\\" name=\\"email_number\\" required><input type=\\"password\\" placeholder=\\"Password\\" name=\\"password\\" required></html>"
 }' 
 ));
 
 $headers = array();
 $headers[] = "Content-Type: application/json";
-$headers[] = "api-key: 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 "; // Replace YOUR_API_KEY with your actual API key
+$headers[] = "api-key: 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"; // Replace YOUR_API_KEY with your actual API key
 
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
