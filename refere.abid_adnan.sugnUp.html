@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LoveBite Signup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Define the main background image and font */
+    body {
+        background-image: linear-gradient(37.5deg, #ff6e7f, #bfe9ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Style the form container */
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    /* Style the form header */
+    .form-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    /* Style the welcome message */
+    .welcome {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    /* Style the form fields */
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .form-field label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .form-field input[type="text"],
+    .form-field input[type="email"],
+    .form-field input[type="password"] {
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    .form-field input[type="text"]:focus,
+    .form-field input[type="email"]:focus,
+    .form-field input[type="password"]:focus {
+        outline: none;
+        box-shadow: 0 0 5px #3B5998;
+    }
+    /* Style the submit button */
+    input[type="submit"] {
+        background-color: #3B5998;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: all 0.3s;
+    }
+    input[type="submit"]:hover {
+        background-color: #2d4373;
+    }
+    /* Style the social login buttons */
+    .social-login {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .social-login button {
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: all 0.3s;
+        margin-right: 10px;
+    }
+    .social-login button i {
+        margin-right: 10px;
+    }
+    .social-login button.facebook {
+        background-color: #3B5998;
+    }
+    .social-login button.facebook:hover {
+        background-color: #2d4373;
+    }
+    .social-login button.wechat {
+        background-color: #2dc100;
+    }
+    .social-login button.wechat:hover {
+        background-color: #1b7f
+    }
+  </style>
+</head>
+<body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>LoveBite Signup</h1>
+      </div>
+      <form>
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="social-login">
+          <button class="facebook"><i class="fab fa-facebook-f"></i>Sign up with Facebook</button>
+          <button class="wechat"><i class="fab fa-weixin"></i>Sign up with WeChat</button>
+        </div>
+        <div class="form-field">
+          <input type="submit" value="Sign Up">
+        </div>
+      </form>
+    </div>
+  </body>
+
+</html>
