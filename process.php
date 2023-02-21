@@ -40,6 +40,6 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  header("Location: https://github.com/love-ai/lovebite/blob/main/couple%20query.html");
+  header("Location: https://github.com/love-ai/lovebite/couple%20query.html");
 }
 ?>
